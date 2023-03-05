@@ -1,0 +1,58 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: '127.0.0.1:9090'
+dns:
+    enable: true
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    enhanced-mode: fake-ip
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+proxies:
+    - { name: 'CFA要的，我也没办法🤷', type: http, server: 127.0.0.1, port: 80, udp: true }
+rules:
+#常见搜索引擎
+    - 'DOMAIN-KEYWORD,baidu.com,REJECT'
+    - 'DOMAIN-KEYWORD,sougou,REJECT'
+    - 'DOMAIN-KEYWORD,duckduckgo,REJECT'
+    - 'DOMAIN-KEYWORD,bing,REJECT'
+    - 'DOMAIN-KEYWORD,wikipedia,REJECT'
+    - 'DOMAIN-KEYWORD,so,REJECT'
+    - 'DOMAIN-KEYWORD,123,REJECT'
+#常见视频流网
+    - 'DOMAIN-KEYWORD,youku,REJECT'
+    - 'DOMAIN-KEYWORD,iqiyi,REJECT'
+    - 'DOMAIN-KEYWORD,qq,REJECT'
+    - 'DOMAIN-KEYWORD,bilibili,REJECT'
+    - 'DOMAIN-KEYWORD,souhu,REJECT'
+#常见聊天网站
+    - 'DOMAIN-KEYWORD,qq,REJECT'
+    - 'DOMAIN-KEYWORD,weibo,REJECT'
+    - 'DOMAIN-KEYWORD,zhihu,REJECT'
+    - 'DOMAIN-KEYWORD,tencent,REJECT'
+    - 'DOMAIN-KEYWORD,sina,REJECT'
+#常见购物网站
+    - 'DOMAIN-KEYWORD,taobao,REJECT'
+    - 'DOMAIN-KEYWORD,jd,REJECT'
+    - 'DOMAIN-KEYWORD,tmall,REJECT'
+    - 'DOMAIN-KEYWORD,pinduoduo,REJECT'
+    - 'DOMAIN-KEYWORD,apple,REJECT'
+    - 'DOMAIN-KEYWORD,mi,REJECT'
+    - 'DOMAIN-KEYWORD,vivo,REJECT'
+    - 'DOMAIN-KEYWORD,oppo,REJECT'
+    - 'DOMAIN-KEYWORD,zte,REJECT'
+    - 'DOMAIN-KEYWORD,think,REJECT'
+    - 'DOMAIN-KEYWORD,dewu,REJECT'
+    - 'DOMAIN-KEYWORD,vip,REJECT'
+    - 'DOMAIN-KEYWORD,alipay,REJECT'
+    - 'DOMAIN-KEYWORD,wechatpay,REJECT'
+    - 'DOMAIN-KEYWORD,pay,REJECT'
+#常见的网盘网站
+    - 'DOMAIN-KEYWORD,123pan,REJECT'
+    - 'DOMAIN-KEYWORD,lanzou,REJECT'
+    - 'DOMAIN-KEYWORD,aliyun,REJECT'
+    - 'DOMAIN-KEYWORD,huawei,REJECT'
+    - 'DOMAIN-KEYWORD,icloud,REJECT'
